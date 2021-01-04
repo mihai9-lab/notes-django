@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse('123')
+    return render(request,'notes/index.html')
 
 def page(request):
-    return render(request,'notes/default.html')
+    return render(request,'notes/main.html')
