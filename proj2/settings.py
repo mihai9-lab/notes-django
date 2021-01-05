@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+LOGIN_REDIRECT_URL = 'notes:index'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'notes.apps.NotesConfig'
+    'notes.apps.NotesConfig',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'proj2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates',os.path.join(BASE_DIR, 'notes/templates')],
+        'DIRS': ['templates', os.path.join(BASE_DIR, 'notes/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,9 +81,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'djangoproj2',
         'USER': 'djangousr',
-        'PASSWORD':'123456',
-        'HOST':'127.0.0.1',
-        'PORT':'3306'
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',
+        'PORT': '3306'
     }
 }
 
