@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-
+from django.conf import settings
 # Create your models here.
 
 
@@ -16,6 +16,8 @@ class Note(models.Model):
         MinValueValidator(5, 'Font size has to be bigger than or equal to 5')
     ])
     completed = models.BooleanField(default=False)
+    userId = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     def is_completed(self):
         return self.completed

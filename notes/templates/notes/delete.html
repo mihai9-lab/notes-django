@@ -1,0 +1,28 @@
+{% extends 'notes/main.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="notes-heading">Delete Note?</h1>
+<div class="d-flex flex-column w-100">
+    <div class="w-50 ps-5 pe-5 ms-auto me-auto">
+
+        <div class="card card-note">
+            <div class="card-body"
+                style="color:{{note.colorText}};background-color:{{note.colorBackground}};font-size:{{note.fontSize}}px">
+                <h5 class="card-title">{{note.name}}</h5>
+                <p class="card-text">{{note.content}}</p>
+            </div>
+        </div>
+        <form method="post" action="{% url 'notes:delete_note' note.id %}">
+            {% csrf_token %}
+            <button type=submit class="btn btn-secondary mt-4 ps-1 pe-1 w-25">
+                Yes
+            </button>
+            <a class="btn btn-secondary mt-4 ps-1 pe-1 w-25" href="{% url 'notes:home' %}">
+                No
+            </a>
+        </form>
+    </div>
+
+</div>
+{% endblock %}

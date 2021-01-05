@@ -1,0 +1,28 @@
+{% extends 'notes/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex flex-column mt-3 mb-3">
+    <h1 class="notes-heading">Your completed Notes</h1>
+    <div class="row card-wrap">
+        {% for note in notes %}
+        <div class="col-3 mb-2 pe-2 ps-2 ">
+            <div class="card card-note">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs fl-r">
+                        <li class="nav-item">
+                            <a class="nav-link card-head-link" href="{% url 'notes:delete_note' note.id %}">Delete</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body"
+                    style="color:{{note.colorText}};background-color:{{note.colorBackground}};font-size:{{note.fontSize}}px">
+                    <h5 class="card-title">{{note.name}}</h5>
+                    <p class="card-text">{{note.content}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

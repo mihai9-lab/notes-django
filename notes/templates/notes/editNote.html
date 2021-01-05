@@ -6,7 +6,7 @@
 <h1 class="notes-heading">Create Note</h1>
 <div class="d-flex flex-column w-100">
 
-    <form method="post" action="{% url 'notes:new_note' %}" class="w-50 ps-5 pe-5 ms-auto me-auto">
+    <form method="post" action="{% url 'notes:edit_note' id %}" class="w-50 ps-5 pe-5 ms-auto me-auto">
         {% csrf_token %}
         <div class="form-group mt-2 mb-2">
             <label for="{{form.name.id_for_label}}">Title:</label>
@@ -44,7 +44,7 @@
                 <small class="form-text" style="color:red;">{{error}}</small>
                 {% endfor %}
             </div>
-            <button type="submit" class="col btn btn-secondary mt-4 ps-1 pe-1 w-25">Create</button>
+            <button type="submit" class="col btn btn-secondary mt-4 ps-1 pe-1 w-25">Save</button>
         </div>
         {% for hidden in form.hidden_fields %}
         {{ hidden }}

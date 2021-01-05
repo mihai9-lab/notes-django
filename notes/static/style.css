@@ -33,7 +33,7 @@ body {
 }
 
 .notes-container {
-  width:70%;
+  width: 70%;
 }
 
 .masthead {
@@ -77,4 +77,33 @@ body {
 .notes .btn-lg {
   padding: 0.75rem 1.25rem;
   font-weight: 700;
+}
+
+.note-con-height {
+  height: 500px;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-note {
+  height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.card-head-link {
+  padding: 0.3rem 0.5rem !important;
+  font-size: 14px !important;
+  color: #333;
+}
+.card-header {
+  float: right;
+}
+.fl-r {
+  float: right;
+}
+.nav-link:focus,.nav-link:hover{
+    color:#333;
 }
